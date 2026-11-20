@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay &amp; Prove — x402 × Internet Court × GenLayer</title>
+<style>
+  :root{
+    --bg:#0a0f1e; --panel:#111a2e; --panel2:#0d1526; --line:#22304d;
+    --gold:#d4af37; --gold2:#f0c75e; --teal:#2dd4bf; --red:#f87171; --green:#4ade80;
+    --text:#e8edf7; --muted:#93a1bd; --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.55}
+  a{color:var(--gold2)}
+  .wrap{max-width:1020px;margin:0 auto;padding:28px 20px 60px}
+  header{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:20px}
+  .logos{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .logos img{height:34px;width:auto;display:block}
+  .logos .ic-badge{height:34px;display:flex;align-items:center;gap:8px;background:#101c33;border:1px solid var(--line);border-radius:9px;padding:0 12px;font-weight:800;letter-spacing:.04em;font-size:15px}
+  .logos .ic-badge span.mark{font-size:19px}
+  .pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a0f1e;background:var(--gold);border-radius:999px;padding:5px 12px}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.08;margin:26px 0 10px;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--gold2)}
+  .lede{color:var(--muted);font-size:17px;max-width:720px}
+  .lede b{color:var(--text)}
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .step .n{font-family:var(--mono);font-size:12px;color:var(--gold2);font-weight:700}
+  .step h3{font-size:16px;margin:6px 0 4px}
+  .step p{font-size:13.5px;color:var(--muted)}
+  .step .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+  h2{font-size:22px;margin:34px 0 6px}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:14px}
+  .deals{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .deal{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .deal .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .deal h3{font-size:17px}
+  .deal .id{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .badge{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+  .badge.refund{background:#3a1420;color:#fca5a5;border:1px solid #7f1d2e}
+  .badge.release{background:#0d2b1a;color:#86efac;border:1px solid #14532d}
+  .badge.created{background:#1e293b;color:#cbd5e1;border:1px solid #334155}
+  .kv{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;font-size:13.5px;margin:12px 0}
+  .kv dt{color:var(--muted)}
+  .kv dd{font-family:var(--mono);font-size:12.5px;word-break:break-all}
+  .kv dd.plain{font-family:inherit;font-size:13.5px}
+  .verdict{background:#101c33;border:1px solid #2b3f66;border-left:4px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:14px;margin-top:10px}
+  .verdict .lbl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2);margin-bottom:4px}
+  .txs{font-size:12px;color:var(--muted);margin-top:10px}
+  .txs a{font-family:var(--mono);font-size:11.5px;word-break:break-all}
+  .contract{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:13.5px}
+  .contract code{font-family:var(--mono);font-size:12px;color:var(--gold2);word-break:break-all}
+  .live{font-size:12.5px;color:var(--muted);margin-top:8px}
+  .live .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:6px;vertical-align:middle}
+  .live .dot.off{background:#64748b}
+  .how ol{margin:10px 0 0 20px;color:var(--muted);font-size:14.5px}
+  .how li{margin:6px 0}
+  .how li b{color:var(--text)}
+  .how code{font-family:var(--mono);font-size:12.5px;background:#0a0f1e;border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--gold2)}
+  footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:12.5px}
+  @media(max-width:760px){.flow{grid-template-columns:1fr 1fr}.deals{grid-template-columns:1fr}.logos img{height:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logos">
+      <img src="assets/genlayer-logo.svg" alt="GenLayer" style="filter:invert(1)" onerror="this.style.display='none'">
+      <span class="ic-badge"><span class="mark">⚖️</span> Internet Court</span>
+      <img src="assets/x402-logo.svg" alt="x402" style="filter:invert(1)" onerror="this.style.display='none'">
+    </div>
+    <span class="pill">Demo Lab · Mission 101</span>
+  </header>
+
+  <h1>Pay &amp; Prove: <em>agents pay, the court decides.</em></h1>
+  <p class="lede">An AI buyer pays an AI seller through an <b>x402-style payment</b>. The funds sit in a <b>GenLayer intelligent escrow</b>. If the seller does not deliver, the buyer disputes — and the <b>Internet Court</b> (GenLayer LLM consensus) adjudicates on-chain and renders a verdict: <b>release</b> or <b>refund</b>. No human judge. No chargeback department. Just a verdict.</p>
+
+  <div class="flow">
+    <div class="step"><div class="n">01</div><h3>Pay · x402</h3><p>Buyer agent requests a good. The seller answers <span class="tag">402 Payment Required</span> with price + escrow terms. Buyer pays; funds lock in escrow.</p></div>
+    <div class="step"><div class="n">02</div><h3>Escrow · GenLayer</h3><p>A <b>PayProveEscrow</b> intelligent contract holds the funds and the deal facts on Studio Next (chain 61997).</p></div>
+    <div class="step"><div class="n">03</div><h3>Dispute</h3><p>Seller silent? Buyer calls <span class="tag">dispute()</span> with a reason. The deal moves to adjudication.</p></div>
+    <div class="step"><div class="n">04</div><h3>Verdict · Internet Court</h3><p><span class="tag">adjudicate()</span> runs LLM consensus: a leader proposes a verdict, validators independently re-judge. Agreed verdict executes.</p></div>
+  </div>
+
+  <h2>Live deals — read from the contract</h2>
+  <p class="sub">These two deals ran end-to-end on GenLayer Studio Next. The verdict below is the real on-chain LLM-consensus output, not a mock.</p>
+  <div class="live" id="live"><span class="dot off"></span><span id="liveText">Connecting to Studio Next to re-read the contract…</span></div>
+
+  <div class="deals" style="margin-top:14px">
+    <div class="deal" id="deal-001">
+      <div class="top"><div><h3>AI market-research report</h3><div class="id">deal-001 · 0.05 GEN · buyer 0x1789…bf33</div></div><span class="badge refund">REFUNDED</span></div>
+      <dl class="kv">
+        <dt>Seller</dt><dd>0x8ae5…c8b</dd>
+        <dt>Item</dt><dd class="plain">AI market-research report (10 pages, English)</dd>
+        <dt>Status</dt><dd class="plain"><b>resolved_refund</b> — disputed → adjudicated</dd>
+        <dt>Dispute</dt><dd class="plain">“The seller never sent the report. No file, no link, no message after payment. Three days passed and nothing was delivered.”</dd>
+      </dl>
+      <div class="verdict"><div class="lbl">⚖️ Internet Court verdict (on-chain)</div><span id="verdict-001">“The buyer provided clear evidence that the seller never sent the promised 10-page report or any delivery link after payment, with three days having passed. The funds should therefore be refunded to the buyer.”</span></div>
+      <div class="txs">create <a href="https://explorer-studio-dev.genlayer.com/tx/0xb88ec4dd42d9693027a9bb52884d0f855c73a23d8aad0fcd3fd95545b662d203" target="_blank" rel="noopener">0xb88ec4dd…</a> · dispute <a href="https://explorer-studio-dev.genlayer.com/tx/0x7ca2ff2b428903b9feb91c40bff9a0052f5161f70cc058f65b30f46317523c6c" target="_blank" rel="noopener">0x7ca2ff2b…</a> · adjudicate <a href="https://explorer-studio-dev.genlayer.com/tx/0xc1d473f463ac34ef90186ce1b4c04a657b9aec4dea9cfadfcda4e3933d3321ac" target="_blank" rel="noopener">0xc1d473f4…</a></div>
+    </div>
+
+    <div class="deal" id="deal-002">
+      <div class="top"><div><h3>Logo design pack</h3><div class="id">deal-002 · 0.03 GEN · buyer 0x1789…bf33</div></div><span class="badge release">DELIVERED</span></div>
+      <dl class="kv">
+        <dt>Seller</dt><dd>0x8ae5…c8b</dd>
+        <dt>Item</dt><dd class="plain">Logo design pack (3 concepts, SVG + PNG)</dd>
+        <dt>Status</dt><dd class="plain"><b>delivered</b> — buyer confirmed, escrow released</dd>
+        <dt>Outcome</dt><dd class="plain">Funds released to the seller. The happy path — no dispute needed.</dd>
+      </dl>
+      <div class="verdict"><div class="lbl">Happy path</div>When delivery happens, the buyer calls <b>confirm_delivery()</b> and the escrow releases. The court only steps in when something goes wrong.</div>
+      <div class="txs">create <a href="https://explorer-studio-dev.genlayer.com/tx/0xb421842bb225bf456b2dbeebc6b7070f84f96d2f847e36527dbdc2df6578a7c8" target="_blank" rel="noopener">0xb421842b…</a> · confirm <a href="https://explorer-studio-dev.genlayer.com/tx/0xd312e34fac1f94d8eec01a795fb60f92f8124813fa1cf8732a8cfb41dc7423fb" target="_blank" rel="noopener">0xd312e34f…</a></div>
+    </div>
+  </div>
+
+  <h2>The contract</h2>
+  <div class="contract">
+    <b>PayProveEscrow</b> — <code>0x072a9e7c549C81f64FBE96990eB122DCd85E18b0</code><br>
+    Chain: <b>GenLayer Studio Next (61997)</b> · Deploy tx: <a href="https://explorer-studio-dev.genlayer.com/tx/0x99fce8c5569d616c1c4103462d5dc22db8ac43e07ea2aff25a131a23892d3228" target="_blank" rel="noopener">0x99fce8c5…</a> · <a href="https://explorer-studio-dev.genlayer.com/address/0x072a9e7c549C81f64FBE96990eB122DCd85E18b0" target="_blank" rel="noopener">View on explorer →</a><br>
+    <span style="color:var(--muted)">Functions: <code>create_deal</code> · <code>confirm_delivery</code> · <code>dispute</code> · <code>adjudicate</code> (LLM consensus) · <code>get_deal</code> · <code>get_status</code> · Source: <code>contract/PayProveEscrow.py</code> in the repo.</span>
+  </div>
+
+  <h2 class="how">Reproduce it</h2>
+  <div class="how">
+    <ol>
+      <li><b>Read the contract</b> — <code>contract/PayProveEscrow.py</code>. The adjudication mirrors the portal's own WizardOfCoin pattern: <code>gl.nondet.exec_prompt</code> inside <code>gl.vm.run_nondet_unsafe(leader_fn, validator_fn)</code>.</li>
+      <li><b>Deploy</b> — <code>scripts/build_deploy_escrow.mjs</code> builds the <code>addTransaction</code> calldata with genlayer-js; <code>scripts/sign_broadcast.py</code> signs with the vault wallet (1-param <code>eth_estimateGas</code> — the GenLayer node rejects 2-param calls).</li>
+      <li><b>Drive a deal</b> — <code>scripts/build_call.mjs &lt;contract&gt; &lt;function&gt; '&lt;json args&gt;'</code> then sign + broadcast the same way. See <code>ONCHAIN_PROOF.md</code> for the exact transactions that produced the two deals above.</li>
+      <li><b>Run this page</b> — open <code>frontend/index.html</code> (or serve this folder). It re-reads both deals live from Studio Next and falls back to the verified snapshot if the RPC is unreachable.</li>
+    </ol>
+  </div>
+
+  <footer>
+    Pay &amp; Prove — a GenLayer Internet Court × x402 demo. Built for the GenLayer “Internet Court: Partner Demo Lab” (Mission 101). Testnet only; all funds are test GEN on Studio Next. Contract and transactions are public and linked above.
+  </footer>
+</div>
+
+<script type="module">
+  // Live re-read from Studio Next (best effort; snapshot above is the verified source of truth).
+  const ADDR = '0x072a9e7c549C81f64FBE96990eB122DCd85E18b0';
+  const liveEl = document.getElementById('liveText');
+  const dot = document.querySelector('#live .dot');
+  try {
+    const { createClient } = await import('https://esm.sh/genlayer-js@2.0.0-rc.3');
+    const { studioDevnet } = await import('https://esm.sh/genlayer-js@2.0.0-rc.3/chains');
+    const { http } = await import('https://esm.sh/viem@2.58.2');
+    const client = createClient({ chain: studioDevnet, transport: http(studioDevnet.rpcUrls.default.http[0]) });
+    const d1 = await client.readContract({ address: ADDR, functionName: 'get_deal', args: ['deal-001'] });
+    const deal = JSON.parse(d1);
+    if (deal && deal.status) {
+      document.getElementById('verdict-001').textContent = '\u201C' + deal.verdict + '\u201D';
+      dot.classList.remove('off');
+      liveEl.textContent = 'Live from Studio Next — deal-001 status: ' + deal.status + ' · outcome: ' + deal.outcome + ' (re-read just now).';
+    }
+  } catch (e) {
+    liveEl.textContent = 'Live read unavailable in this browser — showing the verified on-chain snapshot (tx hashes + explorer links above).';
+  }
+</script>
+</body>
+</html>

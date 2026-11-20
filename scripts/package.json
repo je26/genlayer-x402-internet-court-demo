@@ -1,0 +1,1 @@
+{"dependencies":{"genlayer-js":"^2.0.0-rc.3","viem":"^2.58.2"},"description":"Pay & Prove: x402 payments escrowed in a GenLayer intelligent contract, adjudicated by the Internet Court.","license":"MIT","name":"genlayer-x402-internet-court-demo","scripts":{"verify":"node verify_escrow.mjs"},"type":"module","version":"1.0.0"}
